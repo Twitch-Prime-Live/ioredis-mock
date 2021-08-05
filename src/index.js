@@ -46,7 +46,7 @@ class RedisMock extends EventEmitter {
       this.expires,
       optionsWithDefault.data,
       optionsWithDefault.keyPrefix,
-      typeof options === "string" ? options : undefined
+      typeof options !== "object" ? options : undefined
     );
 
     this._initCommands();
