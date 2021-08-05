@@ -45,4 +45,16 @@ describe('multipleMocks', () => {
       expect(numberOfListeners()).toBe(5);
     });
   });
+
+  describe("Shared redis", () => {
+    it('should allow two clients to access same data', async () => {
+      const testValue = 'a value';
+      const client1 = new Redis('test', "b");
+      const client2 = new Redis('test');
+
+      await client1.set("test", testValue);
+      const value = await client2.get("test")
+      expect(value).toBe(testValue);
+    });
+  });
 });

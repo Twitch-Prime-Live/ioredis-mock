@@ -1,11 +1,17 @@
+import { randomBytes } from 'crypto';
 import { assign } from 'lodash';
 
+const data_store = {}
 export default function createData(
   expiresInstance,
   initial = {},
-  keyPrefix = ''
+  keyPrefix = '',
+  dataPrefix = randomBytes(20).toString('hex'),
 ) {
-  let raw = {};
+  // const dataPrefix = getDataPrefix();
+  const existingData = data_store[dataPrefix];
+  let raw = existingData || {};
+  data_store[dataPrefix] = raw;
 
   function createInstance(prefix, expires) {
     return Object.freeze({

@@ -1,15 +1,16 @@
 {
-  "name": "ioredis-mock",
+  "name": "@crown-channel/ioredis-mock",
   "description": "This library emulates ioredis by performing all operations in-memory.",
+  "version": "5.6.1",
   "license": "MIT",
-  "author": "Cody Olsen <stipsan@gmail.com>",
-  "homepage": "https://github.com/stipsan/ioredis-mock#readme",
+  "author": "Griffin Hammer <grhammer@amazon.com>",
+  "homepage": "https://github.com/Twitch-Prime-Live/ioredis-mock#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stipsan/ioredis-mock.git"
+    "url": "git+https://github.com/Twitch-Prime-Live/ioredis-mock.git"
   },
   "bugs": {
-    "url": "https://github.com/stipsan/ioredis-mock/issues"
+    "url": "https://github.com/Twitch-Prime-Live/ioredis-mock/issues"
   },
   "main": "./lib",
   "files": [
@@ -33,6 +34,7 @@
     "update-compat": "node scripts/update-compat && git add compat.md README.md && git commit --quiet -m \"docs: Update feature compat table\" &> /dev/null || true"
   },
   "dependencies": {
+    "crypto": "^1.0.1",
     "fengari": "^0.1.4",
     "fengari-interop": "^0.1.2",
     "lodash": "^4.17.21",
